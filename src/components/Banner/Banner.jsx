@@ -5,8 +5,8 @@ function Banner() {
     const [email, setEmail] = React.useState('');
     const onChange = ({ target }) => setEmail(target.value);
   return (
-    <div className="h-[450px] border  flex flex-col justify-center items-center">
-      <Typography variant="h2">Material Tailwind</Typography>
+    <div className="h-[450px] border  flex flex-col justify-center items-center mx-4">
+      <Typography variant="h2" className="mb-4">I Grow By Helping People In Need</Typography>
       <div className="relative flex w-full max-w-[24rem]">
         <Input
           type="email"
@@ -18,10 +18,7 @@ function Banner() {
             className: 'min-w-0',
           }}
         />
-        <Button
-          size="sm"
-          className="!absolute right-1 top-1 rounded"
-        >
+        <Button color="red" size="sm" className="!absolute right-1 top-1 rounded">
           Search
         </Button>
       </div>
