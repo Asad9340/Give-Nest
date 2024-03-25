@@ -7,9 +7,9 @@ function DonationDetails() {
   const { id } = useParams();
   const DonationItem = data.filter(item => item.id === Number(id));
   return (
-    <div className="max-w-6xl mx-auto px-4 md:mx-10">
-      {DonationItem.map((item, index, DonationItem) => (
-        <Details key={index} item={item} DonationItem={DonationItem} />
+    <div className="max-w-6xl mx-auto px-4">
+      {DonationItem.map((item, index) => (
+        <Details key={index} item={item} />
       ))}
     </div>
   );
