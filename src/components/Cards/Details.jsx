@@ -1,8 +1,11 @@
 import { Button } from '@material-tailwind/react';
+import { saveLocalStorage } from '../../Utilities/localStorage';
 
-function Details({ item }) {
+function Details({ item, DonationItem }) {
   const { image, title, description, textColor, price, categoryBg } = item;
-  console.log(item);
+  const handleDonate = () => {
+   saveLocalStorage(DonationItem)
+  }
   return (
     <div className="max-w-6xl mx-auto space-y-5 mt-6 md:mt-12 p-4 md:p-0">
       <div className="relative">
@@ -13,6 +16,7 @@ function Details({ item }) {
         />
         <div className=" h-16 md:h-20 absolute bottom-0 w-full bg-[#0B0B0B80]">
           <Button
+            onClick={handleDonate}
             style={{ color: textColor, backgroundColor: categoryBg }}
             className="m-5"
           >
