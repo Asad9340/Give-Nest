@@ -1,19 +1,28 @@
 import { Button } from '@material-tailwind/react';
+import { Link } from 'react-router-dom';
 
 function Card({ card }) {
-  console.log(card);
-  const { image, title, category, textColor } = card;
-  console.log(textColor)
+  const {id, image, title, category, textColor, cardBg, categoryBg } = card;
   return (
-    <div className="border rounded-lg space-y-4">
-      <div>
-        <img className="rounded-t-lg w-full" src={image} alt="" />
+    <Link to={`/donation-details/${id}`}>
+      <div
+        style={{ backgroundColor: cardBg }}
+        className="border rounded-lg space-y-4 cursor-pointer"
+      >
+        <div>
+          <img className="rounded-t-lg w-full" src={image} alt="" />
+        </div>
+        <div style={{ color: textColor }} className="space-y-4">
+          <Button
+            className="ml-4"
+            style={{ color: textColor, backgroundColor: categoryBg }}
+          >
+            {category}
+          </Button>
+          <h2 className="text-2xl font-semibold p-4 ">{title}</h2>
+        </div>
       </div>
-      <div className="space-y-20">
-        <Button>{category}</Button>
-        <h2 className={`text-4xl text-[${textColor}]`}>{title}</h2>
-      </div>
-    </div>
+    </Link>
   );
 }
 
