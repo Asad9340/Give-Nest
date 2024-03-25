@@ -6,6 +6,7 @@ import {
   IconButton,
 } from '@material-tailwind/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { NavLink } from 'react-router-dom';
 
 function NavList() {
   return (
@@ -16,12 +17,12 @@ function NavList() {
         color="blue-gray"
         className="p-1 font-medium"
       >
-        <a
-          href="#"
+        <NavLink
+          to={'/'}
           className="flex items-center hover:text-blue-500 transition-colors text-xl font-medium"
         >
           Home
-        </a>
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -29,12 +30,12 @@ function NavList() {
         color="blue-gray"
         className="p-1 font-medium"
       >
-        <a
-          href="#"
+        <NavLink
+          to={'/donation'}
           className="flex items-center hover:text-blue-500 transition-colors text-xl font-medium"
         >
           Donation
-        </a>
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -42,12 +43,12 @@ function NavList() {
         color="blue-gray"
         className="p-1 font-medium"
       >
-        <a
-          href="#"
+        <NavLink
+          to={'/statistics'}
           className="flex items-center hover:text-blue-500 transition-colors text-xl font-medium"
         >
           Statistics
-        </a>
+        </NavLink>
       </Typography>
     </ul>
   );
@@ -70,7 +71,7 @@ function NavigationBar() {
   return (
     <Navbar className="mx-auto max-w-6xl px-6 py-3 shadow-none">
       <div className="flex items-center justify-between text-blue-gray-900">
-        <img src="./Logo.png" alt="" />
+        <img src="/Logo.png" alt="" />
         <div className="hidden lg:block">
           <NavList />
         </div>

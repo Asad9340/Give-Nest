@@ -6,7 +6,7 @@ function Banner() {
     const onChange = ({ target }) => setEmail(target.value);
   return (
     <div className="h-[450px] flex flex-col justify-center items-center mx-4">
-      <Typography variant="h2" className="mb-4">I Grow By Helping People In Need</Typography>
+      <Typography variant="h2" className="mb-4 text-center">I Grow By Helping People In Need</Typography>
       <div className="relative flex w-full max-w-[24rem]">
         <Input
           type="email"

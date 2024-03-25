@@ -1,18 +1,23 @@
 import { Button } from '@material-tailwind/react';
 
 function Details({ item }) {
-  const { image, title, description } = item;
+  const { image, title, description, textColor, price, categoryBg } = item;
   console.log(item);
   return (
-    <div className="max-w-6xl mx-auto space-y-5 mt-6 md:mt-12">
+    <div className="max-w-6xl mx-auto space-y-5 mt-6 md:mt-12 p-4 md:p-0">
       <div className="relative">
         <img
           className="w-full object-cover overflow-hidden"
           src={image}
           alt=""
         />
-        <div className=" h-20 absolute bottom-0 w-full bg-[#0B0B0B80]">
-          <Button className="m-5 bg-red-600">Donate $100</Button>
+        <div className=" h-16 md:h-20 absolute bottom-0 w-full bg-[#0B0B0B80]">
+          <Button
+            style={{ color: textColor, backgroundColor: categoryBg }}
+            className="m-5"
+          >
+            Donate {price}
+          </Button>
         </div>
       </div>
       <div className="space-y-4">
